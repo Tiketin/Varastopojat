@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.InventaariKontrolleri">
+   <center>
+      <TabPane prefHeight="564.0" prefWidth="990.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="inventoryTab" style="-fx-background-color: #3D3A3A; -fx-text-base-color: white;" text="Inventaari">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="535.0" prefWidth="1150.0" style="-fx-background-color: #3D3A3A;">
+                     <children>
+                        <TableView fx:id="tableview" layoutX="21.0" layoutY="70.0" prefHeight="438.0" prefWidth="738.0" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="231.0" AnchorPane.topAnchor="70.0">
+                          <columns>
+                            <TableColumn fx:id="col_id" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="col_name" prefWidth="93.0" text="Nimi" />
+                              <TableColumn fx:id="col_qty" prefWidth="75.0" text="KPL" />
+                              <TableColumn fx:id="col_price" prefWidth="73.0" text="Hinta" />
+                              <TableColumn prefWidth="426.0" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="lisaaButton" layoutX="797.0" layoutY="260.0" minHeight="29.0" mnemonicParsing="false" onAction="#viewAddProduct" prefHeight="42.0" prefWidth="134.0" style="-fx-background-color: #0D7A2F;" text="Lisää tuote" textFill="WHITE" AnchorPane.rightAnchor="59.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="poistaButton" layoutX="797.0" layoutY="318.0" minHeight="29.0" mnemonicParsing="false" onAction="#viewRemoveProduct" prefHeight="41.0" prefWidth="135.0" style="-fx-background-color: #7A1D1D;" text="Poista tuote" textFill="WHITE" AnchorPane.rightAnchor="58.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>                 
+                        <ImageView fitHeight="160.0" fitWidth="180.0" layoutX="788.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="42.0">
+                           <image>
+                              <Image url="@images/logo.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="saldoButton" layoutX="797.0" layoutY="464.0" mnemonicParsing="false" onAction="#viewUpdateQTY" prefHeight="36.0" prefWidth="135.0" style="-fx-background-color: #A4A912;" text="Saldon muutos" textFill="WHITE" AnchorPane.rightAnchor="58.0" />
+                        <Button fx:id="ostoTilausButton" layoutX="797.0" layoutY="414.0" mnemonicParsing="false" onAction="#viewOstoTilaus" prefHeight="36.0" prefWidth="135.0" style="-fx-background-color: #A4A912;" text="Sisäänosto" textFill="WHITE" AnchorPane.rightAnchor="58.0" />
+                        <TextField fx:id="hakuField" layoutX="798.0" layoutY="171.0" prefHeight="25.0" prefWidth="133.0" promptText="Tuotteen nimi" AnchorPane.rightAnchor="59.0" />
+                        <Label fx:id="productSearchLabel" layoutX="797.0" layoutY="150.0" text="Tuotehaku" textFill="WHITE" AnchorPane.rightAnchor="122.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="purchaseTab" style="-fx-background-color: #3D3A3A; -fx-text-base-color: white;" text="Sisäänosto">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #3D3A3A;">
+                     <children>
+                        <TableView fx:id="tableview3" layoutX="34.0" layoutY="20.0" prefHeight="431.0" prefWidth="658.0" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="20.0">
+                          <columns>
+                            <TableColumn fx:id="col_ostoID" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="col_ostoTuoteId" prefWidth="75.0" text="Tuote" />
+                            <TableColumn fx:id="col_ostoQty" prefWidth="75.0" text="KPL" />
+                              <TableColumn fx:id="col_ostoDate" prefWidth="124.0" text="Päivämäärä" />
+                              <TableColumn fx:id="col_ostoSupplier" prefWidth="96.0" text="Toimittaja" />
+                              <TableColumn prefWidth="212.0" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="luoToimittajaButton" layoutX="760.0" layoutY="39.0" mnemonicParsing="false" onAction="#viewAddSupplier" prefHeight="114.0" prefWidth="179.0" style="-fx-background-color: #0D7A2F;" text="Luo toimittaja" textFill="WHITE" AnchorPane.rightAnchor="51.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="poistaOstoButton" layoutX="760.0" layoutY="185.0" mnemonicParsing="false" onAction="#deleteOstoTilaus" prefHeight="114.0" prefWidth="179.0" style="-fx-background-color: #7A1D1D;" text="Poista sisäänosto" textFill="WHITE" AnchorPane.rightAnchor="51.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="poistaToimittajaButton" layoutX="760.0" layoutY="330.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="179.0" style="-fx-background-color: #7A1D1D;" text="Poista toimittaja" textFill="WHITE" AnchorPane.rightAnchor="51.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="orderTab" style="-fx-background-color: #3D3A3A; -fx-text-base-color: white;" text="Myynti">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #3D3A3A;">
+                     <children>
+                        <TableView fx:id="tableview1" layoutX="30.0" layoutY="14.0" prefHeight="352.0" prefWidth="476.0" AnchorPane.bottomAnchor="169.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="484.0" AnchorPane.topAnchor="14.0">
+                           <columns>
+                              <TableColumn fx:id="col_id1" prefWidth="75.0" text="ID" />
+                              <TableColumn fx:id="col_name1" prefWidth="93.0" text="Nimi" />
+                              <TableColumn fx:id="col_qty1" prefWidth="75.0" text="KPL" />
+                              <TableColumn fx:id="col_price1" prefWidth="73.0" text="Hinta" />
+                              <TableColumn prefWidth="426.0" />
+                           </columns>
+                        </TableView>
+                        <Line endX="-80.0" endY="386.0" layoutX="614.0" layoutY="73.0" startX="-80.0" startY="-61.0" stroke="WHITE" AnchorPane.rightAnchor="455.5" />
+                        <TableView fx:id="tableview2" layoutX="587.0" layoutY="15.0" prefHeight="219.0" prefWidth="334.0" AnchorPane.bottomAnchor="301.0" AnchorPane.rightAnchor="69.0" AnchorPane.topAnchor="15.0">
+                          <columns>
+                            <TableColumn fx:id="col_id2" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="col_name2" prefWidth="75.0" text="Nimi" />
+                              <TableColumn fx:id="col_qty2" prefWidth="75.0" text="KPL" />
+                              <TableColumn fx:id="col_price2" prefWidth="75.0" text="Hinta" />
+                              <TableColumn prefWidth="75.0" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="asiakkaanNimiField" layoutX="609.0" layoutY="268.0" prefHeight="25.0" prefWidth="197.0" promptText="Nimi" AnchorPane.bottomAnchor="242.0" AnchorPane.rightAnchor="184.0" />
+                        <TextField fx:id="asiakkaanOsoiteField" layoutX="609.0" layoutY="321.0" prefHeight="25.0" prefWidth="197.0" promptText="Osoite" AnchorPane.bottomAnchor="189.0" AnchorPane.rightAnchor="184.0" />
+                        <TextField fx:id="asiakkaanKaupunkiField" layoutX="609.0" layoutY="375.0" prefHeight="25.0" prefWidth="197.0" promptText="Kaupunki" AnchorPane.bottomAnchor="135.0" AnchorPane.rightAnchor="184.0" />
+                        <Label fx:id="customerNameLabel" layoutX="609.0" layoutY="248.0" text="Asiakkaan nimi" textFill="WHITE" AnchorPane.bottomAnchor="267.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="customerAddressLabel" layoutX="609.0" layoutY="301.0" text="Asiakkaan osoite" textFill="WHITE" AnchorPane.bottomAnchor="214.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="customerCityLabel" layoutX="609.0" layoutY="355.0" text="Asiakkaan kaupunki" textFill="WHITE" AnchorPane.bottomAnchor="160.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="asiakkaanPostinumeroField" layoutX="609.0" layoutY="432.0" prefHeight="25.0" prefWidth="197.0" promptText="Postinumero" AnchorPane.bottomAnchor="78.0" AnchorPane.rightAnchor="184.0" />
+                        <Label fx:id="customerZipLabel" layoutX="609.0" layoutY="412.0" text="Asiakkaan postinumero" textFill="WHITE" AnchorPane.bottomAnchor="103.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="myyntiTeeTilausButton" layoutX="865.0" layoutY="385.0" mnemonicParsing="false" onAction="#addOrder" prefHeight="74.0" prefWidth="121.0" style="-fx-background-color: #0D7A2F;" text="Tee tilaus" textFill="WHITE" AnchorPane.bottomAnchor="76.0" AnchorPane.rightAnchor="4.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="myyntiLisaaTuoteButton" layoutX="198.0" layoutY="389.0" mnemonicParsing="false" onAction="#viewAddOrder" prefHeight="47.0" prefWidth="141.0" style="-fx-background-color: #7A1D1D;" text="Lisää tuote tilaukseen" textFill="WHITE" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="651.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="billingTab" style="-fx-background-color: #3D3A3A; -fx-text-base-color: white;" text="Laskutus">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #3D3A3A;" />
+               </content>
+            </Tab>
+            <Tab fx:id="settingsTab" style="-fx-background-color: #3D3A3A; -fx-text-base-color: white;" text="Asetukset">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #3D3A3A;">
+                     <children>
+                        <Label fx:id="languageLabel" layoutX="384.0" layoutY="97.0" text="Kieli/Language" textFill="WHITE">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="384.0" layoutY="185.0" mnemonicParsing="false" onAction="#btnFI" text="Suomi" />
+                        <Button layoutX="553.0" layoutY="185.0" mnemonicParsing="false" onAction="#btnEN" text="English" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

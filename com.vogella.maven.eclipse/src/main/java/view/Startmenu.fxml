@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.KayttoliittymaKontrolleri">
+   <top>
+      <ButtonBar prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <buttons>
+            <Button fx:id="inventaariButton" mnemonicParsing="false" onAction="#viewInventaari" prefHeight="53.0" prefWidth="141.0" style="-fx-background-color: #7A1D1D;" text="Inventaari" textFill="WHITE" />
+            <Button fx:id="ostoButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" style="-fx-background-color: #7A1D1D;" text="Osto" textFill="WHITE" />
+            <Button fx:id="myyntiButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" style="-fx-background-color: #7A1D1D;" text="Myynti" textFill="WHITE" />
+            <Button fx:id="laskutusButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="141.0" style="-fx-background-color: #7A1D1D;" text="Laskutus" textFill="WHITE" />
+          <Button fx:id="hakuButton" alignment="CENTER" mnemonicParsing="false" onAction="#viewSearch" prefHeight="55.0" prefWidth="141.0" style="-fx-background-color: #7A1D1D;" text="Haku" textFill="WHITE" />
+        </buttons>
+         <BorderPane.margin>
+            <Insets right="20.0" />
+         </BorderPane.margin>
+      </ButtonBar>
+   </top>
+   <center>
+      <ImageView fitHeight="317.0" fitWidth="297.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@images/logo.png" />
+         </image>
+      </ImageView>
+   </center>
+</BorderPane>

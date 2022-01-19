@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="146.0" prefWidth="315.0" style="-fx-background-color: #3D3A3A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.OstotilausKontrolleri">
+   <children>
+      <TextField fx:id="tuotteenMaaraField" layoutX="26.0" layoutY="41.0" promptText="Määrä" />
+      <TextField fx:id="toimittajanIDField" layoutX="26.0" layoutY="107.0" promptText="ID" />
+      <Label fx:id="tuotteenMaaraLabel" layoutX="26.0" layoutY="14.0" text="Tuotteen määrä" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="toimittajanIDLabel" layoutX="26.0" layoutY="80.0" text="Toimittajan ID" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="ostotilausButton" layoutX="243.0" layoutY="94.0" mnemonicParsing="false" onAction="#addOstotilaus" prefHeight="41.0" prefWidth="58.0" style="-fx-background-color: #7A1D1D;" text="OK" textFill="WHITE" />
+   </children>
+</AnchorPane>

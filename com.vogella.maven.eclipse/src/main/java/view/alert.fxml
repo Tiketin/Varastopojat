@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="167.0" prefWidth="351.0" style="-fx-background-color: #424242;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.removeProductKontrolleri">
+   <children>
+      <Label fx:id="alertLabel" layoutX="81.0" layoutY="28.0" prefHeight="42.0" prefWidth="211.0" text="Syöte on virheellinen" textFill="WHITE" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="28.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="alertOKButton" layoutX="137.0" layoutY="95.0" mnemonicParsing="false" onAction="#closeAlert" prefHeight="42.0" prefWidth="78.0" style="-fx-background-color: #7A1D1D;" text="OK" textFill="WHITE" />
+   </children>
+</AnchorPane>
